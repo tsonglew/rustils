@@ -1,24 +1,30 @@
 # Rustils
 
 [![Tests](https://github.com/tsonglew/rustils/actions/workflows/test.yml/badge.svg)](https://github.com/tsonglew/rustils/actions/workflows/test.yml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/tsonglew/rustils)](https://github.com/tsonglew/rustils/releases)
+[![Publish to PyPI](https://github.com/tsonglew/rustils/actions/workflows/publish.yml/badge.svg)](https://github.com/tsonglew/rustils/actions/workflows/publish.yml)
 
 A collection of utility functions implemented in Rust with Python bindings, focusing on performance and reliability.
 
 ## Features
 
 ### String to Boolean Conversion
+
 - `str_to_bool(s: str) -> bool`: Convert string to boolean (Rust implementation)
 - `py_str_to_bool(s: str) -> bool`: Convert string to boolean (Python reference implementation)
 
 Supported values:
+
 - True: "true", "1", "yes", "y", "on" (case-insensitive)
 - False: "false", "0", "no", "n", "off" (case-insensitive)
 
 ### 3D Point Distance Calculation
+
 - `point3d_distance(p1: Tuple[float, float, float], p2: Tuple[float, float, float]) -> float`: Calculate Euclidean distance between two 3D points (Rust implementation)
 - `py_point3d_distance(p1: Tuple[float, float, float], p2: Tuple[float, float, float]) -> float`: Calculate Euclidean distance between two 3D points (Python reference implementation)
 
 Example:
+
 ```python
 from rustils import point3d_distance
 
