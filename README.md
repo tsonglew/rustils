@@ -7,15 +7,24 @@ A collection of utility functions implemented in Rust with Python bindings, focu
 ## Features
 
 ### String to Boolean Conversion
+- `str_to_bool(s: str) -> bool`: Convert string to boolean (Rust implementation)
+- `py_str_to_bool(s: str) -> bool`: Convert string to boolean (Python reference implementation)
 
-- Fast and reliable string to boolean conversion
-- Supports multiple string formats for true/false values
-- Available in both Rust (high-performance) and Python (reference) implementations
+Supported values:
+- True: "true", "1", "yes", "y", "on" (case-insensitive)
+- False: "false", "0", "no", "n", "off" (case-insensitive)
 
-#### Supported Values
+### 3D Point Distance Calculation
+- `point3d_distance(p1: Tuple[float, float, float], p2: Tuple[float, float, float]) -> float`: Calculate Euclidean distance between two 3D points (Rust implementation)
+- `py_point3d_distance(p1: Tuple[float, float, float], p2: Tuple[float, float, float]) -> float`: Calculate Euclidean distance between two 3D points (Python reference implementation)
 
-- True values: "true", "1", "yes", "y", "on" (case-insensitive)
-- False values: "false", "0", "no", "n", "off" (case-insensitive)
+Example:
+```python
+from rustils import point3d_distance
+
+# Calculate distance between two 3D points
+distance = point3d_distance((0, 0, 0), (1, 1, 1))  # Returns sqrt(3)
+```
 
 ## Installation
 

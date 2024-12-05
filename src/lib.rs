@@ -15,9 +15,18 @@ fn str_to_bool(s: &str) -> PyResult<bool> {
     }
 }
 
+#[pyfunction]
+fn point3d_distance(p1: (f64, f64, f64), p2: (f64, f64, f64)) -> f64 {
+    let dx = p2.0 - p1.0;
+    let dy = p2.1 - p1.1;
+    let dz = p2.2 - p1.2;
+    ((dx * dx) + (dy * dy) + (dz * dz)).sqrt()
+}
+
 #[pymodule]
 fn rustils(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(str_to_bool, m)?)?;
+    m.add_function(wrap_pyfunction!(point3d_distance, m)?)?;
     Ok(())
 }
 
