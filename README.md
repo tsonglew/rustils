@@ -1,5 +1,7 @@
 # Rustils
 
+[![Tests](https://github.com/tsonglew/rustils/actions/workflows/test.yml/badge.svg)](https://github.com/tsonglew/rustils/actions/workflows/test.yml)
+
 A collection of utility functions implemented in Rust with Python bindings, focusing on performance and reliability.
 
 ## Features
