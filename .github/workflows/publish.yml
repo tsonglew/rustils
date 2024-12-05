@@ -40,8 +40,9 @@ jobs:
 
     - name: Verify the build
       run: |
-        ls -l dist/
-        if [ ! -f "dist/*.whl" ] && [ ! -f "dist/*.tar.gz" ]; then
+        cd dist
+        ls -l
+        if [ ! -e *.whl ] || [ ! -e *.tar.gz ]; then
           echo "Build files are missing!"
           exit 1
         fi
