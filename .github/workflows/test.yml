@@ -45,6 +45,10 @@ jobs:
       run: |
         poetry install
 
+    - name: Build Rust extension
+      run: |
+        poetry run maturin develop
+
     - name: Run tests
       run: |
         poetry run pytest tests/test_basic.py -v
